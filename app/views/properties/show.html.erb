@@ -25,5 +25,14 @@
   <%= @property.bathrooms %>
 </p>
 
+<p>
+  <% if @property.photo.attached? %>
+    <%= image_tag @property.photo, style: "width: 200px; display: block"%>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_property_path(@property), class: 'btn btn-success' %>
 <%= link_to 'Back', properties_path, class: 'btn btn-dark' %>
+
+
+ 

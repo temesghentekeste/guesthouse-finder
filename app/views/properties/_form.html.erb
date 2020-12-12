@@ -27,6 +27,12 @@
   </div>
 
   <div class="form-group">
+    <%= form.label :photo, class: 'd-block' %>
+    <%= form.file_field :photo, direct_upload: true, class: 'btn-primary btn-block mb-3'%>
+    <%= property_photo property%>
+  </div>
+
+  <div class="form-group">
     <%= form.submit "Save Property", class: "btn btn-success" %>
   </div>
 <% end %>
