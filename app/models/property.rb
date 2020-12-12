@@ -5,6 +5,10 @@ class Property < ApplicationRecord
 
   validates :photo, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
 
-  # validates :photo, presence: true, blob: { content_type: ['image/jpg', 'image/jpeg', 'image/png'], size_range: 1..3.megabytes }
-  # validates :photo, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
+  scope :latest, -> { order created_at: :desc }
+  
+  # Ex:- scope :active, -> {where(:active => true)}
+  # Ex:- scope :active, -> {where(:active => true)}
+
+
 end

@@ -1,6 +1,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_account!, only: [:new, :create, :destroy]
+  skip_before_action :set_sidebar, only: [:show]
 
   # GET /properties
   # GET /properties.json
@@ -72,4 +73,6 @@ class PropertiesController < ApplicationController
     def property_params
       params.require(:property).permit(:name, :address, :price, :room, :bathrooms, :photo)
     end
+
+   
 end

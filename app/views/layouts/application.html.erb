@@ -13,23 +13,26 @@
   </head>
 
   <body id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
-    <% if ["public","devise", "sessions"].include?(controller.controller_name) %>
+   
+    <% if @show_sidebar.nil?  %>
       <header>
         <%= render 'layouts/nav/public'%>
         <%= yield %>
       </header>
     <% else %>
-          <%= render 'layouts/nav/dashboard'%>
-        <div class="container-fluid mx-0">
-          <div class="row mx-0 px-0">
-            <%= render 'layouts/nav/sidebar'%>
-            <main class="col-md-9 mx-auto col-lg-10 px-0 mt-4">
-              <%= yield %>
-            </main>
-          </div>
+      <%= render 'layouts/nav/dashboard'%>
+      <div class="container-fluid mx-0">
+        <div class="row mx-0 px-0">
+          <%= render 'layouts/nav/sidebar'%>
+          <main class="col-md-9 mx-auto col-lg-10 px-0 mt-4">
+            <%= yield %>
+          </main>
         </div>
+      </div>
     <% end %>
     <div id="notifications"><%= notice %></div>
     <%= render 'layouts/footer'%>
+     <h1> @show_sidebar.nil?:<%= @show_sidebar.nil?%></h1>
+     <h1> @show_sidebar.present?:<%= @show_sidebar.present?%></h1>
   </body>
 </html>

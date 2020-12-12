@@ -1,0 +1,14 @@
+<%= link_to property_path(property), class: 'text-decoration-none' do%>
+<div class="card">
+  <%= property_card_photo property%>
+  <div class="card-body">
+      <h5 class="card-title border-bottom pb-3"><%= property.name%></h5>
+      <p class="card-text"><%= property.address %></p>
+      <div class="amenities">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  </div>
+</div>
+<% end %>
