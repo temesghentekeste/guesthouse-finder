@@ -1,3 +1,16 @@
 #notifications {
   display: none;
 }
+
+.property-show {
+  margin-top: 50px;
+}
+
+.property-cover-photo {
+  height: 400px;
+  .cover-image {
+    // display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

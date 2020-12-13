@@ -17,8 +17,8 @@
     <% if @show_sidebar.nil? || ["public","sessions"].include?(controller.controller_name)  %>
       <header>
         <%= render 'layouts/nav/public'%>
-        <%= yield %>
       </header>
+        <%= yield %>
     <% else %>
       <%= render 'layouts/nav/dashboard'%>
       <div class="container-fluid mx-0">
@@ -32,8 +32,5 @@
     <% end %>
     <div id="notifications"><%= notice %></div>
     <%= render 'layouts/footer'%>
-     <h1> @show_sidebar.nil?:<%= @show_sidebar.nil?%></h1>
-     <h1> @show_sidebar.present?:<%= @show_sidebar.present?%></h1>
-     <h1> current_page?:<%= current_page?(root_path)%></h1>
   </body>
 </html>

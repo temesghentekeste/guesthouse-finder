@@ -1,38 +1,41 @@
-<p id="notice"><%= notice %></p>
+ <div class='property-cover-photo'>
+    <%= property_cover_photo @property%>
+</div>
+<div class="container property-show ">
+  <div class="row">
+    <div class="col-8">
+      <p id="notice"><%= notice %></p>
+     
+      <p>
+        <strong>Name:</strong>
+        <%= @property.name %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
+      <p>
+        <strong>Address:</strong>
+        <%= @property.address %>
+      </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
+      <p>
+        <strong>Price:</strong>
+        <%= @property.price %>
+      </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @property.price %>
-</p>
+      <p>
+        <strong>Room:</strong>
+        <%= @property.room %>
+      </p>
 
-<p>
-  <strong>Room:</strong>
-  <%= @property.room %>
-</p>
-
-<p>
-  <strong>Bathrooms:</strong>
-  <%= @property.bathrooms %>
-</p>
-
-<p>
-  <% if @property.photo.attached? %>
-    <%= image_tag @property.photo, style: "width: 200px; display: block"%>
-  <% end %>
-</p>
-
-<%= link_to 'Edit', edit_property_path(@property), class: 'btn btn-success' %>
-<%= link_to 'Back', properties_path, class: 'btn btn-dark' %>
-
-
+      <p>
+        <strong>Bathrooms:</strong>
+        <%= @property.bathrooms %>
+      </p>
+      <%= link_to 'Edit', edit_property_path(@property), class: 'btn btn-success' %>
+      <%= link_to 'Back', properties_path, class: 'btn btn-dark' %>
+    </div>
+    <div class="col-4">
+      <%= render 'properties/agent_details'%>
+    </div>
  
+  </div>
+</div>
