@@ -13,4 +13,6 @@ class ApplicationController < ActionController::Base
   def set_sidebar
     @show_sidebar = true
   end
+
+ 
 end

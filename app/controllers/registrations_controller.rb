@@ -1,4 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
+  skip_before_action :set_sidebar, only: [:destroy]
+
   private
 
   def sign_up_params
