@@ -2,34 +2,67 @@
     <%= property_cover_photo @property%>
 </div>
 <div class="container property-show ">
+  
   <div class="row">
+    <p id="notice"><%= notice %></p>
     <div class="col-8">
-      <p id="notice"><%= notice %></p>
-     
-      <p>
-        <strong>Name:</strong>
-        <%= @property.name %>
-      </p>
+      <div class="row">
+        <div class="col-6">
+          <p class="mb-0"><%= @property.address %></p>
+          <p class="h2"><%= @property.price.positive? ? number_to_currency(@property.price, precision: 0) : "For Sale" %></p>
+        </div>
+        <div class="col-6 text-center text-white">
+            <div class="row bg-secondary p-3  mr-3 ">
+              <div class="col-4">
+                <p class='mb-0'><strong>Rooms</strong></p>
+                <span class="lead"><%= @property.room%></span>
+              </div>
+              <div class="col-4">
+                <p class='mb-0'><strong>Bathrooms</strong></p>
+                <span class="lead"><%= @property.bathrooms%></span>
+              </div>
+              <div class="col-4">
+                <p class='mb-0'><strong>Parking</strong></p>
+                <span class="lead"><%= @property.parking_spaces%></span>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="row border-bottom border-top mt-5 mb-4 p-3">
+        <div class="col-6">
+          <strong>  <%= link_to "Est. Monthly Repayments of #{number_to_currency(@property.price / 360, :precision => 0)}", "#", class: 'text-success'%></strong>
+        </div>
+        <div class="col-6">
+          <strong> <%= link_to "Can I afford this?", "#", class: 'text-success'%></strong> 
+        
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p class="h3"><%= @property.name %></p>
+          <p class="h5">Property Description</p>
+           <p><%= simple_format @property.details %></p>  
+          <p>
+            <strong>Address:</strong>
+            <%= @property.address %>
+          </p>
 
-      <p>
-        <strong>Address:</strong>
-        <%= @property.address %>
-      </p>
+          <p>
+            <strong>Price:</strong>
+            <%= @property.price %>
+          </p>
 
-      <p>
-        <strong>Price:</strong>
-        <%= @property.price %>
-      </p>
+          <p>
+            <strong>Room:</strong>
+            <%= @property.room %>
+          </p>
 
-      <p>
-        <strong>Room:</strong>
-        <%= @property.room %>
-      </p>
-
-      <p>
-        <strong>Bathrooms:</strong>
-        <%= @property.bathrooms %>
-      </p>
+          <p>
+            <strong>Bathrooms:</strong>
+            <%= @property.bathrooms %>
+          </p>
+        </div>
+      </div>
       <%= link_to 'Edit', edit_property_path(@property), class: 'btn btn-success' %>
       <%= link_to 'Back', properties_path, class: 'btn btn-dark' %>
     </div>
