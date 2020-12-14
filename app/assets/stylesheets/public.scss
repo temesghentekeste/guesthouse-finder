@@ -14,3 +14,11 @@
     height: 100%;
   }
 }
+
+#property-details {
+  height: 150px;
+  overflow: hidden;
+  &.open {
+    height: auto;
+  }
+}

@@ -41,7 +41,10 @@
         <div class="col">
           <p class="h3"><%= @property.name %></p>
           <p class="h5">Property Description</p>
-           <p><%= simple_format @property.details %></p>  
+          <div id="property-details">
+            <%= simple_format @property.details %>
+          </div>  
+          <button class="btn btn-outline-info mt-3 btn-toggle-details">Show more</button>
           <p>
             <strong>Address:</strong>
             <%= @property.address %>
