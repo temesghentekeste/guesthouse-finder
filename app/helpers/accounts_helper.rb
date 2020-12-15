@@ -1,10 +1,10 @@
 module AccountsHelper
 
-  def account_photo(account)
+  def profile_picture(account, style, width)
     if account.image.attached?
-      render 'account_photo', account: account 
+      render 'shared/profile_picture', { account: account, style: style, width: width} 
     else
-      render 'account_dummy_photo'
+      render 'shared/dummy_profile_picture'
     end
   end
 

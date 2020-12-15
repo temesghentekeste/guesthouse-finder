@@ -27,7 +27,7 @@
     <div class="form-group">
       <%= f.label :image, class: 'd-block'  %>
       <%= f.file_field :image, direct_upload: true, class: 'btn-primary btn-block mb-3 '%>
-      <%= account_photo current_account%>
+      <%= profile_picture current_account, 'squared-image', 200%>
     </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

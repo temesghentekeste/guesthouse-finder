@@ -1,0 +1,2 @@
+ <% cloudname = cloudinary_name %>
+  <%= cl_image_tag(account.image.key, secure: true, :class => "#{style} small", :sizes => "#{width}px", :cloud_name => cloudname)%>

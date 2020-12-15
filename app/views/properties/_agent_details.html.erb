@@ -1,7 +1,8 @@
-<div>
+<div class="text-center border ml-2  p-4 agent-details">
+  <%= profile_picture(@agent, 'rounded-profile', 200)%>
   <h3><%= @agent.full_name %></h3>
   <h5><%= @agent.company%></h5>
 
-  <button class="btn btn-info">Call <%= @agent.first_name %></button>
-  <button class="btn btn-success">Email <%= @agent.first_name %></button>
+  <button class="btn btn-info">Call</button>
+  <button class="btn btn-success">Email</button>
 </div>
