@@ -5,11 +5,11 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable, :trackable
   has_many :properties
 
+  has_one_attached :image, dependent: :destroy
+
+  validates :image, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
+
   def full_name
     "#{first_name} #{last_name}"
-  end
-
-  def company
-    "Fake Company"
   end
 end

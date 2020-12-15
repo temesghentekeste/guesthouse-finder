@@ -20,8 +20,14 @@
     </div>
 
      <div class="form-group">
-      <%= f.label :url %><br />
-      <%= f.text_field, class: "form-control", placeholder: "Enter your url" %>
+      <%= f.label :company %><br />
+      <%= f.text_field :company, class: "form-control", placeholder: "Enter your company name" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image, class: 'd-block'  %>
+      <%= f.file_field :image, direct_upload: true, class: 'btn-primary btn-block mb-3 '%>
+      <%= account_photo current_account%>
     </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

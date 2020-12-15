@@ -3,8 +3,8 @@
 </div>
 <div class="container property-show ">
   
+  <p id="noti ce"><%= notice %></p>
   <div class="row">
-    <p id="notice"><%= notice %></p>
     <div class="col-8">
       <div class="row">
         <div class="col-6">
@@ -30,7 +30,7 @@
       </div>
       <div class="row border-bottom border-top mt-5 mb-4 p-3">
         <div class="col-6">
-          <strong>  <%= link_to "Est. Monthly Repayments of #{number_to_currency(@property.price / 360, :precision => 0)}", "#", class: 'text-success'%></strong>
+          <strong>  <%= link_to "Est. Monthly Repayments of #{number_to_currency((@property.price - @property.price * 0.1) / 360, :precision => 0)}", "#", class: 'text-success'%></strong>
         </div>
         <div class="col-6">
           <strong> <%= link_to "Can I afford this?", "#", class: 'text-success'%></strong> 
@@ -45,6 +45,8 @@
             <%= simple_format @property.details %>
           </div>  
           <button class="btn btn-outline-info mt-3 btn-toggle-details">Show more</button>
+
+          <p class="mt-5">This rate is based on a 30 year mortgage, after paying initial 10% down payment. Shorter mortgage would requite a higher monthly repayment</p>
           <p>
             <strong>Address:</strong>
             <%= @property.address %>
