@@ -16,9 +16,10 @@
 }
 
 #property-details {
-  height: 150px;
+  height: 50px;
   overflow: hidden;
   &.open {
     height: auto;
   }
 }
+

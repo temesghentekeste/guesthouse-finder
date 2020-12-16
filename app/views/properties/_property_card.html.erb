@@ -1,14 +1,14 @@
-<%= link_to property_path(property), class: 'text-decoration-none' do%>
+<%= link_to property_path(property), class: 'text-decoration-none text-dark' do%>
 <div class="card">
   <%= property_card_photo property%>
   <div class="card-body">
       <h5 class="card-title border-bottom pb-3"><%= property.name%></h5>
-      <p class="card-text"><%= property.address %></p>
-      <div class="amenities">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="amenities mb-2">
+        <span class='mr-2'><i class="fas fa-bed mr-1 text-muted"></i><%= property.room%></span>
+        <span class='mr-2'><i class="fas fa-bath mr-1 text-muted"></i><%= property.bathrooms%></span>
+        <span><i class="fas fa-car mr-1 text-muted"></i><%= property.parking_spaces%></span>
       </div>
+      <p class="card-text"><%= property.address %></p>
   </div>
 </div>
 <% end %>

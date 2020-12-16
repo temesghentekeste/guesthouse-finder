@@ -6,11 +6,13 @@
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
 
-<div class="container ">
-  <div class="row">
-    <%= render 'properties/latest_properties'%>
+<section id="latest-properties" class="mb-5">
+  <div class="container ">
+    <div class="row">
+      <%= render 'properties/list', properties: @properties%>
+    </div>
   </div>
-</div>
+</section>
 
 <div class="container">
   <div class="row">

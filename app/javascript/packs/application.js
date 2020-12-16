@@ -16,6 +16,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 require("bootstrap");
+import "@fortawesome/fontawesome-free/js/all";
 require("./includes/properties");
 import "../stylesheets/application";
 document.addEventListener("load", function() {

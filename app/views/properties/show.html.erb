@@ -14,14 +14,17 @@
         <div class="col-md-6 text-center text-white">
             <div class="row bg-secondary p-3  mr-3 ">
               <div class="col-md-4">
+                <i class="fas fa-bed"></i>
                 <p class='mb-0'><strong>Rooms</strong></p>
                 <span class="lead"><%= @property.room%></span>
               </div>
               <div class="col-md-4">
+                <i class="fas fa-bath"></i>
                 <p class='mb-0'><strong>Bathrooms</strong></p>
                 <span class="lead"><%= @property.bathrooms%></span>
               </div>
               <div class="col-md-4">
+                <i class="fas fa-car"></i>
                 <p class='mb-0'><strong>Parking</strong></p>
                 <span class="lead"><%= @property.parking_spaces%></span>
               </div>
@@ -68,8 +71,6 @@
           </p>
         </div>
       </div>
-      <%= link_to 'Edit', edit_property_path(@property), class: 'btn btn-success' %>
-      <%= link_to 'Back', properties_path, class: 'btn btn-dark' %>
     </div>
     <div class="col-md-4">
       <%= render 'properties/agent_details'%>
@@ -77,3 +78,11 @@
  
   </div>
 </div>
+
+<section id="latest-properties" class="mt-5 mb-5">
+  <div class="container ">
+    <div class="row">
+      <%= render 'properties/list', properties: @agent_properties%>
+    </div>
+  </div>
+</section>
