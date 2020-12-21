@@ -19,6 +19,15 @@ require("bootstrap");
 import "@fortawesome/fontawesome-free/js/all";
 require("./includes/properties");
 import "../stylesheets/application";
+
+global.toastr = require("toastr")
+// toastr.options = {
+//     progressBar: true
+// }
+
+
+
+
 document.addEventListener("load", function() {
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
