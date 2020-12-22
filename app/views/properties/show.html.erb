@@ -9,7 +9,13 @@
       <div class="row">
         <div class="col-md-6">
           <p class="mb-0"><%= @property.address %></p>
-          <p class="h2"><%= @property.price.positive? ? number_to_currency(@property.price, precision: 0) : "For Sale" %></p>
+          <p class="h2">
+            <% if @property.for_sale %>
+            <%= @property.price.positive? ? number_to_currency(@property.price, precision: 0) : "For Sale" %>
+            <% else %>
+            <%= @property.price.positive? ? number_to_currency(@property.price, precision: 0) : "For Sale" %> / Month
+            <% end %>
+          </p>
         </div>
         <div class="col-md-6 text-center text-white">
             <div class="row bg-secondary p-3  mr-3 ">
@@ -33,7 +39,11 @@
       </div>
       <div class="row border-bottom border-top mt-5 mb-4 p-3">
         <div class="col-md-6">
-          <strong>  <%= link_to "Est. Monthly Repayments of #{number_to_currency((@property.price - @property.price * 0.1) / 360, :precision => 0)}", "#", class: 'text-success'%></strong>
+          <% if @property.for_sale %>
+            <strong>  
+              <%= link_to "Est. Monthly Repayments of #{number_to_currency((@property.price - @property.price * 0.1) / 360, :precision => 0)}", "#", class: 'text-success'%>
+            </strong>
+          <% end %>
         </div>
         <div class="col-md-6">
           <strong> <%= link_to "Can I afford this?", "#", class: 'text-success'%></strong> 
