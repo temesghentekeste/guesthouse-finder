@@ -1,5 +1,9 @@
+/*
+  $('document').ready(function(){}); is eqt to
+  vanila js: window.onload="myFunction()";
+*/
 
-$(function() {
+window.onload = function() {
   var btnToggle = document.querySelector('.btn-toggle-details');
   
   btnToggle.addEventListener('click', ()=>{
@@ -9,4 +13,4 @@ $(function() {
     btnToggle.innerHTML = details.classList.contains('open') ? "Show less" : "Show more"
     console.log(details);
   })
-})
+}
