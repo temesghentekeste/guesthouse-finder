@@ -41,6 +41,11 @@
     <%= form.select :for_sale, options_for_select({ "Yes" => true, "No" => false}, @property.for_sale), class:'form-control' %>
   </div>
 
+   <div class="form-group">
+    <%= form.label :available_date %>
+    <%= form.date_field :available_date, class:'form-control'%>
+  </div>
+
   <div class="form-group">
     <%= form.label :photo, class: 'd-block' %>
     <%= form.file_field :photo, direct_upload: true, class: 'btn-primary btn-block mb-3 '%>
