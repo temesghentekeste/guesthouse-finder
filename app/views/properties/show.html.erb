@@ -87,6 +87,14 @@
     </div>
     <div class="col-md-4">
       <%= render 'properties/agent_details'%>
+      <iframe
+        width="320"
+        height="240"
+        class="mt-3 col-md-12"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBhl2iaIMeLOCvJsaN9m1cZw0RKdJZXSEw
+          &q=<%= @property.address %>" allowfullscreen>
+      </iframe>
     </div>
  
   </div>
