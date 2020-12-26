@@ -103,7 +103,12 @@
 <section id="latest-properties" class="mt-5 mb-5">
   <div class="container ">
     <div class="row">
-      <%= render 'properties/list', properties: @agent_properties%>
+        <% if @agent_properties.count.positive? %>
+          <div class="col-12">
+              <p class="h2 my-4">Other properties by this agent</p>
+          </div>
+          <%= render 'properties/list', properties: @agent_properties%>
+        <% end %>
     </div>
   </div>
 </section>

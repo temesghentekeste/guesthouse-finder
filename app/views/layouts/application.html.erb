@@ -14,7 +14,7 @@
 
   <body id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
    
-    <% if @show_sidebar.nil? || ["public","sessions"].include?(controller.controller_name)  %>
+    <% if @show_sidebar.nil? || ["public","sessions", "registrations"].include?(controller.controller_name)  %>
       <header>
         <%= render 'layouts/nav/public'%>
       </header>
@@ -32,9 +32,6 @@
     <% end %>
     <%= render 'layouts/footer'%>
     <div id="notifications"><%= flash_notifications %></div>
-    <%# <script>
-      toastr['success']('Ya! it worked')
-    </script> %>
   </body>
   </body>
 </html>
