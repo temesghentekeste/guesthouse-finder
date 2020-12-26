@@ -5,6 +5,15 @@
 
 window.onload = function() {
   var btnToggle = document.querySelector('.btn-toggle-details');
+  const btnTelephone = document.querySelector('#show-tel');
+
+  btnTelephone.addEventListener('click', e => {
+    e.preventDefault();
+    const data = btnTelephone.dataset.telephone;
+    const span = btnTelephone.querySelector('span');
+    span.textContent = data;
+    console.log('clicked', data);
+  })
   
   btnToggle.addEventListener('click', ()=>{
     var details = document.querySelector('#property-details');

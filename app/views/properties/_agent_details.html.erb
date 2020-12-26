@@ -3,7 +3,8 @@
   <h3><%= @agent.full_name %></h3>
   <h5><%= @agent.company%></h5>
 
-  <button class="btn btn-info">Call</button>
+  <button class="btn btn-info btn-block mb-4" id="show-tel" data-telephone="<%= @agent.telephone %>"> <i class="fas fa-phone mr-2"></i> <span>Call</span></button>
+  <%= link_to "Profile", profile_path, class: 'btn btn-secondary'%>
   <button class="btn btn-success">Email</button>
-  <i class="fab fa-twitter fa-2x"></i>
+ 
 </div>
