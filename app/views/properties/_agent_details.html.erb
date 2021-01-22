@@ -5,6 +5,6 @@
 
   <button class="btn btn-info btn-block mb-4" id="show-tel" data-telephone="<%= @agent.telephone %>"> <i class="fas fa-phone mr-2"></i> <span>Call</span></button>
   <%= link_to "Profile", profile_path, class: 'btn btn-secondary'%>
-  <button class="btn btn-success">Email</button>
+  <button class="btn btn-success" data-toggle="modal" data-target="#contact-modal">Email</button>
  
 </div>
