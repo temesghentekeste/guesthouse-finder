@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   resources :properties
   get 'public/main'
   get 'home/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'public#main'
   
   get '/profile/:id' => 'dashboard#profile', as: :profile
+  post 'agent/message' => 'properties#email_agent', as: :email_agent
   
 end
